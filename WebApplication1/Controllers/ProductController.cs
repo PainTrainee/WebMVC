@@ -13,7 +13,7 @@ namespace WebApplication1.Controllers
                 new Product() { Id=2,Name="Coffee",Price=200,Amount=15},
 
             };
-            return View(product);
+            return View(new {product,Title="Coffee Shop"});
         }
     }
 }
