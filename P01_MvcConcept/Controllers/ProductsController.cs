@@ -14,7 +14,6 @@ namespace P01_MvcConcept.Controllers
         }
         public IActionResult Index()
         {
-            ps.GenerateProduct(20);
             return View(ps.GetProductAll());
         }
         public IActionResult Create()
@@ -24,7 +23,12 @@ namespace P01_MvcConcept.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
-            return View();
+            var result = ps.SearchProduct(product.Id);
+            if (result == null)
+            {
+                ps.AddProduct(product);
+            }
+            return RedirectToAction("Index");
         }
     }
 }
