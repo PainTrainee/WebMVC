@@ -41,5 +41,14 @@ namespace P01_MvcConcept.IService
         {
             ProductList.Add(product);
         }
+
+        public void DeleteProduct(int id)
+        {
+            var result = SearchProduct(id);
+            if(result != null)
+            {
+                ProductList.Remove(result);
+            }
+        }
     }
 }
