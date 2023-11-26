@@ -23,6 +23,10 @@ namespace P01_MvcConcept.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
+            if(!ModelState.IsValid)
+            {
+                return View();
+            }
             var result = ps.SearchProduct(product.Id);
             if (result == null)
             {
