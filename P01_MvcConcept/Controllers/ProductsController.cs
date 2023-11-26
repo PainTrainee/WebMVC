@@ -39,5 +39,18 @@ namespace P01_MvcConcept.Controllers
             ps.DeleteProduct(id);
             return RedirectToAction("Index");
         }
+        public IActionResult Edit(int id)
+        {
+            var result = ps.SearchProduct(id);
+            if(result != null) { return View(result);  }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public IActionResult Edit(Product product)
+        {
+            if(!ModelState.IsValid) { return View(); }
+            ps.UpdateProduct(product);
+            return RedirectToAction("Index");
+        }
     }
 }
