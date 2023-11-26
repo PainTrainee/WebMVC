@@ -1,21 +1,23 @@
-﻿<p>Create Page</p>
+﻿@model Product
+<p>Create Page</p>
 @* alt+shift+w cover block with div *@
-<div class="container col-md-4">
+<div class="container col-md-6">
+    <form asp-action="Create">
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">ID</label>
-            <input type="number" class="form-control">
+            <label class="form-label">ID</label>
+            <input asp-for="Id" type="number" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Name</label>
-            <input class="form-control">
+            <input asp-for="Name" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Price</label>
-            <input type="number" class="form-control">
+            <input asp-for="Price" type="number" class="form-control">
         </div>
         <div class="mb-3">
             <label class="form-label">Amount</label>
-            <input type="number" class="form-control">
+            <input asp-for="Amount" type="number" class="form-control">
         </div>
         <div class="d-flex justify-content-between w-25">
             <button type="submit" class="btn btn-primary">Submit</button>

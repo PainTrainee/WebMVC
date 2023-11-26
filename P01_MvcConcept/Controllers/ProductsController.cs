@@ -5,13 +5,24 @@ namespace P01_MvcConcept.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly IProductService ps;
+
+        //เรียกใช้ DI
+        public ProductsController(IProductService ps)
+        {
+            this.ps = ps;
+        }
         public IActionResult Index()
         {
-            var ps = new ProductService();
             ps.GenerateProduct(20);
             return View(ps.GetProductAll());
         }
         public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(Product product)
         {
             return View();
         }
