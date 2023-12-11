@@ -12,7 +12,7 @@ namespace P03_CodeFirst.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=LAPTOP-M8KR7TQE;Database=TestProductXXX;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-M8KR7TQE;Database=TestProduct67;Trusted_Connection=True;TrustServerCertificate=True;");
             //optionsBuilder.UseSqlite("Data Source=TestProduct67");
         }
         public DbSet<Product> Products { get; set; }
