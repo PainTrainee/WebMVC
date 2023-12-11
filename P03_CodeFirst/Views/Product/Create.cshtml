@@ -1,6 +1,7 @@
 ﻿@model Product
-<form>
+<form asp-action="Create">
     @* <div asp-validation-summary="All" class="text-danger"></div> *@
+    @* <input class="d-none" asp-for="Id"/> *@
     <div class="mb-3">
         <label asp-for="Name" class="form-label"></label>
         <input class="form-control" asp-for="Name" />
@@ -17,6 +18,7 @@
         <span asp-validation-for="Amount" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-success" asp-action="Index">Cancel</button>
 </form>
 @section Scripts {
     @{
