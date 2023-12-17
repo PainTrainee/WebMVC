@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Product>
+<table class="table table-striped">
+    <a class="btn btn-primary" asp-action="Create">Create!!!!</a>
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(p=>p.Id)</th>
+            <th scope="col">@Html.DisplayNameFor(p => p.Name)</th>
+            <th scope="col">@Html.DisplayNameFor(p => p.Price)</th>
+            <th scope="col">@Html.DisplayNameFor(p => p.Amount)</th>
+            <th scope="col">@Html.DisplayNameFor(p => p.ImageUrl)</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <th scope="row">@product.Id</th>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Amount</td>
+                <td>
+                    <img src="@product.ImageUrl" height="50px" width="50px" class="rounded">
+                <td>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@product.Id" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

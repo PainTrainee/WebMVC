@@ -1,11 +1,13 @@
 global using P05_UploadFile.Models;
-using P05_UploadFile.Data;
+global using P05_UploadFile.Data;
+global using P05_UploadFile.ProductService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 

@@ -11,7 +11,7 @@ using P05_UploadFile.Data;
 namespace P05_UploadFile.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20231216045456_InitDB")]
+    [Migration("20231216073219_InitDB")]
     partial class InitDB
     {
         /// <inheritdoc />
