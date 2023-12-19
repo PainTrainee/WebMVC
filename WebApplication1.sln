@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P03_CodeFirst", "P03_CodeFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P04_RelationDB", "P04_RelationDB\P04_RelationDB.csproj", "{5CF8347A-FB8A-48D1-8C08-205A1C641689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P05_UploadFile", "P05_UploadFile\P05_UploadFile.csproj", "{346D586F-CA0A-47CC-B2AB-2D76041604CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P05_UploadFile", "P05_UploadFile\P05_UploadFile.csproj", "{346D586F-CA0A-47CC-B2AB-2D76041604CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P06_Authen", "P06_Authen\P06_Authen.csproj", "{32DD5FAF-05D6-4882-A9B9-203D366BF090}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{346D586F-CA0A-47CC-B2AB-2D76041604CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{346D586F-CA0A-47CC-B2AB-2D76041604CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{346D586F-CA0A-47CC-B2AB-2D76041604CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32DD5FAF-05D6-4882-A9B9-203D366BF090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32DD5FAF-05D6-4882-A9B9-203D366BF090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32DD5FAF-05D6-4882-A9B9-203D366BF090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32DD5FAF-05D6-4882-A9B9-203D366BF090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
