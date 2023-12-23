@@ -3,6 +3,7 @@
 #nullable disable
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,6 +17,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using P08_Authorization2.Areas.Identity.Data;
@@ -30,13 +32,15 @@ namespace P08_Authorization2.Areas.Identity.Pages.Account
         private readonly IUserEmailStore<MyUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private readonly RoleManager<IdentityRole> roleManager;
 
         public RegisterModel(
             UserManager<MyUser> userManager,
             IUserStore<MyUser> userStore,
             SignInManager<MyUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,6 +48,7 @@ namespace P08_Authorization2.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            this.roleManager = roleManager;
         }
 
         /// <summary>
@@ -98,6 +103,9 @@ namespace P08_Authorization2.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            [Required]
+            public string Role { get; set; }
+            public IEnumerable<SelectListItem> RoleList { get; set; }
         }
 
 
