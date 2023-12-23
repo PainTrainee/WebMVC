@@ -2,6 +2,7 @@ global using P08_Authorization2.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using P08_Authorization2.Data;
+using P08_Authorization2.Services;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Authorization2ContextConnection") ?? throw new InvalidOperationException("Connection string 'Authorization2ContextConnection' not found.");
 
@@ -14,11 +15,13 @@ builder.Services.AddDefaultIdentity<MyUser>(options =>
     options.Password.RequireLowercase = false;
     options.Password.RequireUppercase = false;
     options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequiredLength = 3;
-}).AddEntityFrameworkStores<Authorization2Context>();
+
+}).AddRoles<IdentityRole>()
+.AddEntityFrameworkStores<Authorization2Context>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IRoleService, RoleService>();
 
 var app = builder.Build();
 
